@@ -50,7 +50,6 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@prisma/engines": "^6.19.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "16.0.0",
