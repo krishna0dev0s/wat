@@ -12,9 +12,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function MarketingHome() {
   return (
-    <div className="w-full py-10 md:py-20 bg-muted/40 backdrop-blur-sm">
+    <div className="w-full py-10 md:py-20">
       {/* Feature Cards Section */}
-      <section className="w-full py-8 md:py-16 lg:py-24 bg-background">
+      <section className="w-full py-8 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12 text-foreground">
             These features will blow your mind...
@@ -23,7 +23,7 @@ export default function MarketingHome() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-2 border-muted bg-background hover:border-primary hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out rounded-xl p-6 backdrop-blur-sm"
+                className="border-2 border-muted hover:border-primary hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out rounded-xl p-6"
               >
                 <CardContent className="text-center flex flex-col items-center">
                   <div className="flex flex-col items-center justify-center gap-4 w-full">
@@ -43,7 +43,7 @@ export default function MarketingHome() {
       </section>
 
       {/* Stats Section */}
-      <section className="w-full py-10 md:py-20 bg-muted/40 backdrop-blur-sm">
+      <section className="w-full py-10 md:py-20">
         <div className="container mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
             {[
@@ -54,7 +54,7 @@ export default function MarketingHome() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center text-center space-y-4 bg-background rounded-xl p-6 border border-muted hover:border-primary hover:shadow-lg transition-all duration-300 ease-in-out"
+                className="flex flex-col items-center justify-center text-center space-y-4 rounded-xl p-6 border border-muted hover:border-primary hover:shadow-lg transition-all duration-300 ease-in-out"
               >
                 <h3 className="text-5xl font-extrabold text-foreground tracking-tight">
                   {item.stat}
@@ -69,7 +69,7 @@ export default function MarketingHome() {
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full py-12 md:py-20 lg:py-24 bg-background relative overflow-hidden">
+      <section className="w-full py-12 md:py-20 lg:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
@@ -84,11 +84,11 @@ export default function MarketingHome() {
             {howItWorks.map((item, index) => (
               <div
                 key={index}
-                className="group flex flex-col items-center text-center space-y-5 p-6 rounded-xl border border-border bg-card/80 backdrop-blur-md shadow-md hover:shadow-lg transition-all duration-300"
+                className="group flex flex-col items-center text-center space-y-5 p-6 rounded-xl border border-border shadow-md hover:shadow-lg transition-all duration-300"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl shadow-inner group-hover:scale-105 group-hover:bg-primary/20 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center text-primary text-2xl shadow-inner group-hover:scale-105 transition-transform duration-300">
                   {item.icon}
                 </div>
                 <h3 className="font-semibold text-lg md:text-xl tracking-tight">{item.title}</h3>
@@ -100,7 +100,7 @@ export default function MarketingHome() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="w-full py-10 md:py-20 bg-muted/40 backdrop-blur-sm">
+      <section className="w-full py-10 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
@@ -115,11 +115,11 @@ export default function MarketingHome() {
             {testimonial.map((t, i) => (
               <article
                 key={i}
-                className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow duration-200"
+                className="border border-border rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow duration-200"
                 aria-labelledby={`testimonial-title-${i}`}
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-muted/30">
+                  <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                     <Image
                       src={t.image}
                       alt={t.author ?? "User avatar"}
@@ -167,7 +167,7 @@ export default function MarketingHome() {
       </section>
 
       {/* FAQ Section */}
-      <section className="w-full py-8 md:py-16 lg:py-24 bg-background">
+      <section className="w-full py-8 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-center mb-4 text-foreground">

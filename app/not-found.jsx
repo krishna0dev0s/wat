@@ -7,23 +7,8 @@ export default function NotFound() {
   return (
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
       {/* Radial depth background */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(1200px_circle_at_20%_10%,#0b1223_0%,#050812_45%,#02040a_80%)]"
-      />
-
-      {/* Subtle grid overlay */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 [background:linear-gradient(transparent_0,transparent_calc(100%_-_1px),rgba(255,255,255,0.04)_calc(100%_-_1px)),linear-gradient(90deg,transparent_0,transparent_calc(100%_-_1px),rgba(255,255,255,0.04)_calc(100%_-_1px))] bg-[size:24px_24px]"
-      />
-
-      {/* Ambient glows */}
-      <div aria-hidden className="absolute -left-24 -top-24 w-80 h-80 bg-gradient-to-br from-[#7c3aed] to-[#06b6d4] opacity-10 rounded-full blur-3xl" />
-      <div aria-hidden className="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] bg-gradient-to-tr from-[#ff7ab6] to-[#7c3aed] opacity-10 rounded-full blur-3xl" />
-
       {/* Card */}
-      <section className="relative z-10 mx-6 w-full max-w-4xl rounded-2xl border border-white/10 bg-white/5 p-8 md:p-12 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+      <section className="relative z-10 mx-6 w-full max-w-4xl rounded-2xl border border-white/10 p-8 md:p-12 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_10px_40px_-10px_rgba(0,0,0,0.6)]">
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* 404 emblem */}
           <div className="flex-shrink-0 text-center md:text-left">

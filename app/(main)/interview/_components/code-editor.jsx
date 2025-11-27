@@ -4,21 +4,11 @@ import { useState } from "react";
 import { Copy, Play, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-
-export default function CodeEditor({ question, onSubmit }) {
-  const [code, setCode] = useState(question.codeTemplate || "");
-  const [output, setOutput] = useState("");
-  const [running, setRunning] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
   const handleRun = async () => {
     setRunning(true);
     // Simulate code execution - in production, use a safe execution engine
     setTimeout(() => {
-      // For demo purposes, we'll just show a placeholder
-      setOutput(`// Code executed\n// Output would appear here\n// Expected: ${question.expectedOutput || 'See sample answer'}`);
+      setOutput("// Output simulated\n" + code);
       setRunning(false);
     }, 1000);
   };
@@ -37,21 +27,28 @@ export default function CodeEditor({ question, onSubmit }) {
   const handleCopyTemplate = () => {
     navigator.clipboard.writeText(code);
   };
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
 
+export default function CodeEditor({ question, onSubmit }) {
+  const [code, setCode] = useState(question.codeTemplate || "");
+  const [output, setOutput] = useState("");
+  const [running, setRunning] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   return (
     <div className="space-y-4">
       {/* Code Editor */}
-      <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+      <Card className="border border-border shadow-md">
         <CardHeader className="pb-3">
           <CardTitle className="text-lg">Write Your Solution</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="bg-background/50 rounded-lg p-1 overflow-hidden border border-border">
+          <div className="rounded-lg p-1 overflow-hidden border border-border">
             <Textarea
               value={code}
               onChange={(e) => setCode(e.target.value)}
               placeholder="Write your code here..."
-              className="bg-transparent border-0 focus:ring-0 font-mono text-sm h-96 resize-none"
+              className="border-0 focus:ring-0 font-mono text-sm h-96 resize-none"
               disabled={submitted}
             />
           </div>
@@ -92,12 +89,12 @@ export default function CodeEditor({ question, onSubmit }) {
 
       {/* Output */}
       {output && (
-        <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+        <Card className="border border-border shadow-md">
           <CardHeader className="pb-3">
             <CardTitle className="text-base">Output</CardTitle>
           </CardHeader>
           <CardContent>
-            <pre className="bg-background/50 p-3 rounded text-sm overflow-x-auto text-muted-foreground font-mono">
+            <pre className="p-3 rounded text-sm overflow-x-auto text-muted-foreground font-mono">
               {output}
             </pre>
           </CardContent>
@@ -106,12 +103,12 @@ export default function CodeEditor({ question, onSubmit }) {
 
       {/* Expected Output */}
       {question.expectedOutput && (
-        <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+        <Card className="border border-border shadow-md">
           <CardHeader className="pb-3">
             <CardTitle className="text-base">Expected Output</CardTitle>
           </CardHeader>
           <CardContent>
-            <pre className="bg-background/50 p-3 rounded text-sm overflow-x-auto text-muted-foreground font-mono">
+            <pre className="p-3 rounded text-sm overflow-x-auto text-muted-foreground font-mono">
               {question.expectedOutput}
             </pre>
           </CardContent>
@@ -120,7 +117,7 @@ export default function CodeEditor({ question, onSubmit }) {
 
       {/* Sample Answer */}
       {question.sampleAnswer && !submitted && (
-        <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+        <Card className="border border-border shadow-md">
           <CardHeader className="pb-3">
             <CardTitle className="text-base flex items-center gap-2">
               <Badge variant="outline">Hint</Badge>
@@ -137,10 +134,11 @@ export default function CodeEditor({ question, onSubmit }) {
       <Button
         onClick={handleSubmit}
         disabled={!code.trim() || submitted}
-        className="w-full bg-primary hover:bg-primary/90"
+        className="w-full"
       >
         {submitted ? "✓ Submitted" : "Submit Solution"}
       </Button>
     </div>
   );
 }
+

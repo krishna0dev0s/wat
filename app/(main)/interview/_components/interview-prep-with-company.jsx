@@ -52,7 +52,7 @@ export default function InterviewPrepWithCompany({ company, job, onBack }) {
   if (loading) {
     return (
       <div className="w-full py-20 flex items-center justify-center">
-        <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md w-full max-w-md">
+        <Card className="border border-border shadow-md w-full max-w-md">
           <CardContent className="pt-6 flex flex-col items-center gap-4">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
             <p className="text-lg font-medium">Generating interview questions...</p>
@@ -65,7 +65,7 @@ export default function InterviewPrepWithCompany({ company, job, onBack }) {
 
   if (error || questions.length === 0) {
     return (
-      <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+      <Card className="border border-border shadow-md">
         <CardContent className="pt-6">
           <div className="flex gap-4">
             <AlertCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-1" />
@@ -128,7 +128,7 @@ export default function InterviewPrepWithCompany({ company, job, onBack }) {
 
   if (submitted) {
     return (
-      <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+      <Card className="border border-border shadow-md">
         <CardContent className="pt-6">
           <div className="text-center space-y-4">
             <div className="text-5xl">✓</div>
@@ -143,13 +143,13 @@ export default function InterviewPrepWithCompany({ company, job, onBack }) {
   const getDifficultyColor = (difficulty) => {
     switch (difficulty?.toLowerCase()) {
       case "easy":
-        return "bg-green-500/20 text-green-300";
+        return "text-green-300";
       case "medium":
-        return "bg-yellow-500/20 text-yellow-300";
+        return "text-yellow-300";
       case "hard":
-        return "bg-red-500/20 text-red-300";
+        return "text-red-300";
       default:
-        return "bg-gray-500/20 text-gray-300";
+        return "text-gray-300";
     }
   };
 
@@ -190,7 +190,7 @@ export default function InterviewPrepWithCompany({ company, job, onBack }) {
       </Card>
 
       {/* Question Card */}
-      <Card className="border border-border bg-card/80 backdrop-blur-md shadow-md">
+      <Card className="border border-border shadow-md">
         <CardHeader>
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -234,7 +234,7 @@ export default function InterviewPrepWithCompany({ company, job, onBack }) {
                 value={answers[currentIndex] || ""}
                 onChange={(e) => handleAnswer(e.target.value)}
                 placeholder={`Your answer for this ${currentQuestion.type} question...`}
-                className="w-full bg-transparent p-3 border-0 focus:ring-0 font-normal text-sm h-48 resize-none"
+                className="w-full p-3 border-0 focus:ring-0 font-normal text-sm h-48 resize-none"
               />
             </div>
           )}

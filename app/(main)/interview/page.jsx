@@ -24,10 +24,9 @@ export default function InterviewPrepPage() {
 
   if (selectedJob) {
     return (
-      <div className="w-full py-10 md:py-20 bg-muted/40 backdrop-blur-sm min-h-screen">
+      <div className="w-full py-10 md:py-20 min-h-screen">
         <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-          <div className="absolute -left-40 -top-24 w-[600px] h-[600px] bg-gradient-to-br from-[#7c3aed]/20 to-[#06b6d4]/20 opacity-30 rounded-full filter blur-3xl transform rotate-12" />
-          <div className="absolute right-0 bottom-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ff7ab6]/20 to-[#7c3aed]/20 opacity-30 rounded-full filter blur-3xl" />
+          {/* Removed background gradients and blur */}
         </div>
 
         <div className="container mx-auto px-4 md:px-6">
@@ -44,13 +43,8 @@ export default function InterviewPrepPage() {
   }
 
   return (
-    <div className="w-full py-10 md:py-20 bg-muted/40 backdrop-blur-sm min-h-screen">
-      {/* Background gradients */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-40 -top-24 w-[600px] h-[600px] bg-gradient-to-br from-[#7c3aed]/20 to-[#06b6d4]/20 opacity-30 rounded-full filter blur-3xl transform rotate-12" />
-        <div className="absolute right-0 bottom-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ff7ab6]/20 to-[#7c3aed]/20 opacity-30 rounded-full filter blur-3xl" />
-      </div>
-
+    <div className="w-full py-10 md:py-20 min-h-screen">
+      {/* Background gradients removed */}
       <div className="container mx-auto px-4 md:px-6">
         {/* Header Section */}
         <div className="space-y-6 text-center container mx-auto mb-12">
@@ -89,7 +83,7 @@ export default function InterviewPrepPage() {
                 <StatsCards assessments={assessments} />
               </section>
 
-              <section className="bg-card/30 border border-white/10 backdrop-blur-sm rounded-xl p-6">
+              <section className="border border-white/10 rounded-xl p-6">
                 <h2 className="text-2xl font-semibold mb-6 text-foreground/80">Progress Analysis</h2>
                 <PerformanceChart assessments={assessments} />
               </section>

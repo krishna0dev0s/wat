@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from '@clerk/themes';
 import { Toaster } from "@/components/ui/sonner";
-import FaultyTerminal from "@/components/ui/Backgrounds/FaultyTerminal/FaultyTerminal";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,10 +32,7 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            {/* FaultyTerminal Background - Full Screen */}
-            <div className="fixed inset-0 w-screen h-screen -z-50">
-              <FaultyTerminal />
-            </div>
+            {/* Background removed as requested */}
 
             {/* Content Layer */}
             <div className="relative z-10">

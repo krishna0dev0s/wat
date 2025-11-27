@@ -1,4 +1,4 @@
-import { db } from "../lib/prisma";
+import { db } from "../lib/db";
 import { generateSolutionWithGemini } from "../lib/gemini";
 import { checkUser } from "../lib/checkUser";
 

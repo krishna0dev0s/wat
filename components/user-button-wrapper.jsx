@@ -11,7 +11,7 @@ export function UserButtonWrapper() {
   }, []);
 
   // Avoid hydration mismatch by only rendering on client
-  if (!typeof window !== 'undefined' || !mounted) {
+  if (typeof window === 'undefined' || !mounted) {
     return <div className="w-10 h-10" />;
   }
 

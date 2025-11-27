@@ -1,27 +1,8 @@
 /* Add to existing globals.css */
 
 /* Enhanced background blur styles */
-.blur-background {
-  @apply fixed inset-0 -z-10;
-  -webkit-backdrop-filter: blur(80px);
-  backdrop-filter: blur(80px);
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.95) 100%
-  );
-}
 
-/* Enhanced gradient orb styles */
-.gradient-orb {
-  @apply absolute rounded-full filter blur-3xl opacity-30;
-  background: linear-gradient(
-    var(--gradient-angle, 45deg),
-    var(--gradient-start),
-    var(--gradient-end)
-  );
-  animation: rotate 20s linear infinite;
-}
+
 
 @property --gradient-angle {
   syntax: '<angle>';

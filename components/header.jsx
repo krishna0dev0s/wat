@@ -1,3 +1,4 @@
+"use client";
 import {
   SignedOut,
   SignedIn,
@@ -25,16 +26,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { checkUser } from "@/lib/checkUser";
 import { UserButtonWrapper } from "./user-button-wrapper";
 import { HeaderAuth } from "./header-auth";
 
-const Header = async() => {
-  try {
-    await checkUser();
-  } catch (error) {
-    console.error("Error checking user in header:", error);
-  }
+const Header = () => {
   return (
     <header
       className="border-b sticky top-0 z-50"
